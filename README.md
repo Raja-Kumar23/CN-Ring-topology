@@ -97,3 +97,10 @@ sudo iptables -A OUTPUT -d 10.6.189.198 -j ACCEPT
 sudo iptables -A OUTPUT -d 10.7.225.247 -j DROP
 
 
+FOR SHOMYA 
+sudo iptables -F
+sudo iptables -A INPUT -s 10.7.225.247 -j ACCEPT    # Allow Raja
+sudo iptables -A INPUT -s 10.7.239.244 -j DROP      # Block Saurav
+sudo iptables -A OUTPUT -d 10.7.225.247 -j ACCEPT
+sudo iptables -A OUTPUT -d 10.7.239.244 -j DROP
+
