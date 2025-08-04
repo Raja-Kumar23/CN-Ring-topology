@@ -104,3 +104,10 @@ sudo iptables -A INPUT -s 10.7.239.244 -j DROP      # Block Saurav
 sudo iptables -A OUTPUT -d 10.7.225.247 -j ACCEPT
 sudo iptables -A OUTPUT -d 10.7.239.244 -j DROP
 
+FOR RAJA 
+sudo iptables -F
+sudo iptables -A INPUT -s 10.6.189.198 -j ACCEPT    # Allow from Shomya
+sudo iptables -A INPUT -s 10.7.239.244 -j DROP      # Block Saurav
+sudo iptables -A OUTPUT -d 10.6.189.198 -j ACCEPT
+sudo iptables -A OUTPUT -d 10.7.239.244 -j DROP
+
