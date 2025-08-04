@@ -88,13 +88,13 @@ It restricts direct access to nodes not immediately next in the ring using iptab
 
 This setup is helpful for understanding network topologies and enforcing strict traffic rules at the OS level using firewalls.
 
-
-FOR SAURAV
+FOR RAJA 
 sudo iptables -F
-sudo iptables -A INPUT -s 10.6.189.198 -j ACCEPT    # Allow Shomya
-sudo iptables -A INPUT -s 10.7.225.247 -j DROP      # Block Raja
+sudo iptables -A INPUT -s 10.6.189.198 -j ACCEPT    # Allow from Shomya
+sudo iptables -A INPUT -s 10.7.239.244 -j DROP      # Block Saurav
 sudo iptables -A OUTPUT -d 10.6.189.198 -j ACCEPT
-sudo iptables -A OUTPUT -d 10.7.225.247 -j DROP
+sudo iptables -A OUTPUT -d 10.7.239.244 -j DROP
+
 
 
 FOR SHOMYA 
@@ -104,12 +104,15 @@ sudo iptables -A INPUT -s 10.7.239.244 -j DROP      # Block Saurav
 sudo iptables -A OUTPUT -d 10.7.225.247 -j ACCEPT
 sudo iptables -A OUTPUT -d 10.7.239.244 -j DROP
 
-FOR RAJA 
-sudo iptables -F
-sudo iptables -A INPUT -s 10.6.189.198 -j ACCEPT    # Allow from Shomya
-sudo iptables -A INPUT -s 10.7.239.244 -j DROP      # Block Saurav
-sudo iptables -A OUTPUT -d 10.6.189.198 -j ACCEPT
-sudo iptables -A OUTPUT -d 10.7.239.244 -j DROP
 
-RAJA ------ SHOMYA -------------SAURAV ------------RAJA------------SHOMYA
+FOR SAURAV
+sudo iptables -F
+sudo iptables -A INPUT -s 10.6.189.198 -j ACCEPT    # Allow Shomya
+sudo iptables -A INPUT -s 10.7.225.247 -j DROP      # Block Raja
+sudo iptables -A OUTPUT -d 10.6.189.198 -j ACCEPT
+sudo iptables -A OUTPUT -d 10.7.225.247 -j DROP
+
+
+RAJA ------ SHOMYA -------------SAURAV ------------RAJA------------SHOMYA.........
+
 
